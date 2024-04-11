@@ -25,36 +25,49 @@ const teamArray = [
         name : "Wayne",
         surname : "Barnett",
         role : "Founder & CEO",
-        image : "<img src:'./img/wayne-barnett-founder-ceo.jpg'>"
+        image : "<img src:'./img/wayne-barnett-founder-ceo.jpg'>",
     },
     {
         name : "Angela",
         surname : "Caroll",
         role : "Chief Editor",
-        image : "<img src:'./img/angela-caroll-chief-editor.jpg'>"
+        image : "<img src:'./img/angela-caroll-chief-editor.jpg'>",
     },
     {
         name : "Walter",
         surname : "Gordon",
         role : "Office Manager",
-        image : "<img src:'./img/walter-gordon-office-manager.jpg'>"
+        image : "<img src:'./img/walter-gordon-office-manager.jpg'>",
     },
     {
         name : "Angela",
         surname : "Lopez",
         role : "Social Media Manager",
-        image : "<img src:'./img/angela-lopez-social-media-manager.jpg'>"
+        image : "<img src:'./img/angela-lopez-social-media-manager.jpg'>",
     },
     {
         name : "Scott",
         surname : "Estrada",
         role : "Developer",
-        image : "<img src:'./img/scott-estrada-developer.jpg'>"
+        image : "<img src:'./img/scott-estrada-developer.jpg'>",
     },
     {
         name : "Barbara",
         surname : "Ramos",
         role : "Graphic Designer",
-        image : "<img src:'./img/barbara-ramos-graphic-designer.jpg'>"
+        image : "<img src:'./img/barbara-ramos-graphic-designer.jpg'>",
     }
 ]
+
+
+//Milestone 1
+//Uso forEach()
+teamArray.forEach((curElem) => {
+    let cont = 1;
+    console.log('--------', cont, '---------');
+    console.log('Questo è object : ',curElem)
+    for(let key in curElem){
+        console.log('Questa è la proprietà : ', key, 'Questo è il contenuto : ', curElem[key]);
+    }
+    cont++
+})
