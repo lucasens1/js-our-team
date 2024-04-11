@@ -25,49 +25,67 @@ const teamArray = [
         name : "Wayne",
         surname : "Barnett",
         role : "Founder & CEO",
-        image : "<img src:'./img/wayne-barnett-founder-ceo.jpg'>",
+        image : "./img/wayne-barnett-founder-ceo.jpg",
     },
     {
         name : "Angela",
         surname : "Caroll",
         role : "Chief Editor",
-        image : "<img src:'./img/angela-caroll-chief-editor.jpg'>",
+        image : "./img/angela-caroll-chief-editor.jpg",
     },
     {
         name : "Walter",
         surname : "Gordon",
         role : "Office Manager",
-        image : "<img src:'./img/walter-gordon-office-manager.jpg'>",
+        image : "./img/walter-gordon-office-manager.jpg",
     },
     {
         name : "Angela",
         surname : "Lopez",
         role : "Social Media Manager",
-        image : "<img src:'./img/angela-lopez-social-media-manager.jpg'>",
+        image : "./img/angela-lopez-social-media-manager.jpg",
     },
     {
         name : "Scott",
         surname : "Estrada",
         role : "Developer",
-        image : "<img src:'./img/scott-estrada-developer.jpg'>",
+        image : "./img/scott-estrada-developer.jpg",
     },
     {
         name : "Barbara",
         surname : "Ramos",
         role : "Graphic Designer",
-        image : "<img src:'./img/barbara-ramos-graphic-designer.jpg'>",
+        image : "./img/barbara-ramos-graphic-designer.jpg",
     }
 ]
 
-
+{/* <img src="./img/angela-caroll-chief-editor.jpg" alt=""> */}
 //Milestone 1
 //Uso forEach()
+let cont = 1; //Contatore per capire quali oggetti stampa
 teamArray.forEach((curElem) => {
-    let cont = 1;
     console.log('--------', cont, '---------');
-    console.log('Questo è object : ',curElem)
+    console.log('Questo è object : ',curElem);
+    cont++;
     for(let key in curElem){
         console.log('Questa è la proprietà : ', key, 'Questo è il contenuto : ', curElem[key]);
     }
-    cont++
 })
+
+//Milestone 2 + 3 + Bonus 1 + Bonus 2
+let rowElem = document.getElementById('card-group');
+
+//Ciclo for dove prendo ogni Oggetto e ne scrivo le proprietà e i valori nel DOM
+for(let i = 0; i < teamArray.length; i++){
+    let curItem = teamArray[i];
+    
+    rowElem.innerHTML += `
+        <div class = "col-30">
+            <img src="${curItem.image}" alt ="" height ="200px">
+            <p class="mt-10 white-txt"> <b>Nome</b> : <i>${curItem.name}</i></p>
+            <p class = "white-txt"> <b>Cognome</b> : <i>${curItem.surname}</i></p>
+            <p class = "white-txt"> <b>Ruolo</b> : <i>${curItem.role}</i></p>
+        </div>
+        `
+    
+}
